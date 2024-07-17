@@ -1,3 +1,5 @@
 [console_scripts]
+listener = camera_package.subscriber_member_function:main
 simulated_camera_node = camera_package.simulated_camera_node:main
+talker = camera_package.publisher_member_function:main
 

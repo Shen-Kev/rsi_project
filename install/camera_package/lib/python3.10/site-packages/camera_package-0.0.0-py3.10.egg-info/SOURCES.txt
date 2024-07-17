@@ -10,7 +10,9 @@ setup.py
 ../../build/camera_package/camera_package.egg-info/top_level.txt
 ../../build/camera_package/camera_package.egg-info/zip-safe
 camera_package/__init__.py
+camera_package/publisher_member_function.py
 camera_package/simulated_camera_node.py
+camera_package/subscriber_member_function.py
 resource/camera_package
 test/test_copyright.py
 test/test_flake8.py

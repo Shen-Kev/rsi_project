@@ -20,7 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'simulated_camera_node = camera_package.simulated_camera_node:main'
+            'simulated_camera_node = camera_package.simulated_camera_node:main',
+            'talker = camera_package.publisher_member_function:main',
+            'listener = camera_package.subscriber_member_function:main',
+
         ],
     },
 )
