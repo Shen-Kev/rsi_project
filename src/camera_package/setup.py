@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='ubuntu',
     maintainer_email='kshen3005@gmail.com',
-    description='TODO: Package description',
+    description='RSI 2024 Project Package',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
