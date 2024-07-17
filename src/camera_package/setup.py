@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'simulated_camera_node = camera_package.simulated_camera_node:main',
-            'camera_control = camera_package.camera_control:main',
+            'local_planner = camera_package.local_planner:main',
             'servo_cmd = camera_package.servo_cmd:main',
             'subscriber_member_function = camera_package.subscriber_member_function:main',
             'transform = camera_package.transform:main',

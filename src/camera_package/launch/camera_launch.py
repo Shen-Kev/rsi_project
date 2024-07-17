@@ -5,7 +5,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='camera_package',
-            executable='camera_control', 
+            executable='local_planner', 
         ),
         Node(
             package='camera_package',
