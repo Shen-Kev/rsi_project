@@ -1,0 +1,3 @@
+[console_scripts]
+simulated_camera_node = camera_package.simulated_camera_node:main
+
