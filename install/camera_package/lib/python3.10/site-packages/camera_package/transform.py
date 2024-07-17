@@ -5,14 +5,14 @@
 import rclpy
 from rclpy.node import Node
 
-class HelloWorldNode(Node):
+class TransformNode(Node):
     def __init__(self):
         super().__init__('transform')
         self.get_logger().info('Hello from transform')
 
 def main(args=None):
     rclpy.init(args=args)
-    node = HelloWorldNode()
+    node = TransformNode()
     rclpy.spin_once(node)
     node.destroy_node()
     rclpy.shutdown()

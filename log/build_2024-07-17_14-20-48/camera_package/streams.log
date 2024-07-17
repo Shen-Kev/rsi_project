@@ -1,0 +1,37 @@
+[0.403s] Invoking command in '/home/ubuntu/rsi_project/src/camera_package': PYTHONPATH=/home/ubuntu/rsi_project/build/camera_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_package build --build-base /home/ubuntu/rsi_project/build/camera_package/build install --record /home/ubuntu/rsi_project/build/camera_package/install.log --single-version-externally-managed install_data
+[0.499s] running egg_info
+[0.499s] writing ../../build/camera_package/camera_package.egg-info/PKG-INFO
+[0.500s] writing dependency_links to ../../build/camera_package/camera_package.egg-info/dependency_links.txt
+[0.500s] writing entry points to ../../build/camera_package/camera_package.egg-info/entry_points.txt
+[0.501s] writing requirements to ../../build/camera_package/camera_package.egg-info/requires.txt
+[0.501s] writing top-level names to ../../build/camera_package/camera_package.egg-info/top_level.txt
+[0.502s] reading manifest file '../../build/camera_package/camera_package.egg-info/SOURCES.txt'
+[0.503s] adding license file 'LICENSE'
+[0.503s] writing manifest file '../../build/camera_package/camera_package.egg-info/SOURCES.txt'
+[0.503s] running build
+[0.504s] running build_py
+[0.504s] copying camera_package/camera_control.py -> /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package
+[0.504s] copying camera_package/servo_cmd.py -> /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package
+[0.505s] copying camera_package/transform.py -> /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package
+[0.505s] running install
+[0.506s] running install_lib
+[0.509s] copying /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package/camera_control.py -> /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package
+[0.509s] copying /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package/servo_cmd.py -> /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package
+[0.509s] copying /home/ubuntu/rsi_project/build/camera_package/build/lib/camera_package/transform.py -> /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package
+[0.509s] byte-compiling /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/camera_control.py to camera_control.cpython-310.pyc
+[0.509s] byte-compiling /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/servo_cmd.py to servo_cmd.cpython-310.pyc
+[0.509s] byte-compiling /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/transform.py to transform.cpython-310.pyc
+[0.509s] running install_data
+[0.509s] running install_egg_info
+[0.514s] removing '/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info' (and everything under it)
+[0.514s] Copying ../../build/camera_package/camera_package.egg-info to /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info
+[0.514s] running install_scripts
+[0.520s] Installing camera_control script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing listener script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing servo_cmd script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing simulated_camera_node script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing subscriber_member_function script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing talker script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] Installing transform script to /home/ubuntu/rsi_project/install/camera_package/lib/camera_package
+[0.520s] writing list of installed files to '/home/ubuntu/rsi_project/build/camera_package/install.log'
+[0.546s] Invoked command in '/home/ubuntu/rsi_project/src/camera_package' returned '0': PYTHONPATH=/home/ubuntu/rsi_project/build/camera_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/camera_package build --build-base /home/ubuntu/rsi_project/build/camera_package/build install --record /home/ubuntu/rsi_project/build/camera_package/install.log --single-version-externally-managed install_data

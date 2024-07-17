@@ -1,7 +1,8 @@
 #this node takes in the camera input and decides where the servo motor should point to keep the object in frame with minimal motion blur and minimal servo lag (understands that servo must move smoothly and can't instantly jump to new position)
 
+#WORK ON THIS FIRST- TO SEE WHAT INPUTS IT NEEDS AND WHAT OUTPUTS IT CAN GIVE
 
-#TEST TO SEE IF LAUNCH LAUNCHES EVERYTHING
+
 import rclpy
 from rclpy.node import Node
 
