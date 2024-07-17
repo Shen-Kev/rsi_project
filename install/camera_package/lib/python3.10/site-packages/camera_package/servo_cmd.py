@@ -5,14 +5,14 @@
 import rclpy
 from rclpy.node import Node
 
-class HelloWorldNode(Node):
+class ServoCmdNode(Node):
     def __init__(self):
-        super().__init__('simulated_camera_node')
+        super().__init__('servo_cmd')
         self.get_logger().info('Hello from servo_cmd')
 
 def main(args=None):
     rclpy.init(args=args)
-    node = HelloWorldNode()
+    node = ServoCmdNode()
     rclpy.spin_once(node)
     node.destroy_node()
     rclpy.shutdown()

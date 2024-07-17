@@ -7,7 +7,7 @@ from rclpy.node import Node
 
 class HelloWorldNode(Node):
     def __init__(self):
-        super().__init__('simulated_camera_node')
+        super().__init__('camera_control')
         self.get_logger().info('Hello from camera_control')
 
 def main(args=None):

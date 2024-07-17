@@ -5,14 +5,14 @@
 import rclpy
 from rclpy.node import Node
 
-class HelloWorldNode(Node):
+class CameraControlNode(Node):
     def __init__(self):
         super().__init__('camera_control')
         self.get_logger().info('Hello from camera_control')
 
 def main(args=None):
     rclpy.init(args=args)
-    node = HelloWorldNode()
+    node = CameraControlNode()
     rclpy.spin_once(node)
     node.destroy_node()
     rclpy.shutdown()

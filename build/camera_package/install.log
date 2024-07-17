@@ -23,5 +23,8 @@
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info/top_level.txt
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/camera_control
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/listener
-/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/servo_cmd = camera_package.servo_cmd:mainsubscriber_member_function = camera_package.subscriber_member_function:maintransform = camera_package.transform:maintalker
+/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/servo_cmd
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/simulated_camera_node
+/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/subscriber_member_function
+/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/talker
+/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/transform

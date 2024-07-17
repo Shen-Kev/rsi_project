@@ -22,9 +22,9 @@ setup(
         'console_scripts': [
             'simulated_camera_node = camera_package.simulated_camera_node:main',
             'camera_control = camera_package.camera_control:main',
-            'servo_cmd = camera_package.servo_cmd:main'
-            'subscriber_member_function = camera_package.subscriber_member_function:main'
-            'transform = camera_package.transform:main'
+            'servo_cmd = camera_package.servo_cmd:main',
+            'subscriber_member_function = camera_package.subscriber_member_function:main',
+            'transform = camera_package.transform:main',
 
             'talker = camera_package.publisher_member_function:main',
             'listener = camera_package.subscriber_member_function:main',
