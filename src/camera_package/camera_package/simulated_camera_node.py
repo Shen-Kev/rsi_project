@@ -1,6 +1,1 @@
-def main():
-    print('Hi from camera_package.')
-
-
-if __name__ == '__main__':
-    main()
+#this node simulates the camera output, ouputting the object's x,y position on the frame and its depth relative to the camera frame
