@@ -1,0 +1,1 @@
+#this node takes in where the servo should be and sends that command to the actual servo. for now, it is simulated output.
