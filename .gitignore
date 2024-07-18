@@ -1,3 +1,8 @@
-*.build
-*.install
-*.log
+build
+build/
+
+install
+install/
+
+log
+log/
