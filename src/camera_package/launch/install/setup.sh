@@ -39,11 +39,11 @@ COLCON_CURRENT_PREFIX="/home/ubuntu/rsi_project/install"
 _colcon_prefix_chain_sh_source_script "$COLCON_CURRENT_PREFIX/local_setup.sh"
 
 # setting COLCON_CURRENT_PREFIX avoids relying on the build time prefix of the sourced script
-COLCON_CURRENT_PREFIX="/home/ubuntu/rsi_project/src/camera_package/install"
+COLCON_CURRENT_PREFIX="/home/ubuntu/rsi_project/src/install"
 _colcon_prefix_chain_sh_source_script "$COLCON_CURRENT_PREFIX/local_setup.sh"
 
 # setting COLCON_CURRENT_PREFIX avoids relying on the build time prefix of the sourced script
-COLCON_CURRENT_PREFIX="/home/ubuntu/rsi_project/src/install"
+COLCON_CURRENT_PREFIX="/home/ubuntu/rsi_project/src/camera_package/install"
 _colcon_prefix_chain_sh_source_script "$COLCON_CURRENT_PREFIX/local_setup.sh"
 
 

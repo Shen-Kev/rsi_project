@@ -10,7 +10,7 @@ setup.py
 ../../build/camera_package/camera_package.egg-info/top_level.txt
 ../../build/camera_package/camera_package.egg-info/zip-safe
 camera_package/__init__.py
-camera_package/camera_control.py
+camera_package/local_planner.py
 camera_package/publisher_member_function.py
 camera_package/servo_cmd.py
 camera_package/simulated_camera_node.py

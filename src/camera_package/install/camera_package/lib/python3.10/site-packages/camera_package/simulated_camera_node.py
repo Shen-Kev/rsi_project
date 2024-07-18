@@ -1,13 +1,9 @@
 #this node simulates the camera output, ouputting the object's x,y position on the frame and its depth relative to the camera frame
 
 
-
 import rclpy
 from rclpy.node import Node
-
 from std_msgs.msg import String
-
-import random
 
 
 class SimulatedCameraNode(Node):
@@ -17,15 +13,21 @@ class SimulatedCameraNode(Node):
         self.publisher_ = self.create_publisher(String, 'object_state', 10)
         timer_period = 0.0166667  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.x = -10.0  # Starting position
+        self.y = 0.0   # Fixed y-coordinate
+        self.z = 0.0   # Fixed z-coordinate
+        self.direction = 1  # Moving in the positive x direction
 
     def timer_callback(self):
         msg = String()
-        x = random.uniform(-10.0, 10.0)
-        y = random.uniform(-10.0, 10.0)
-        z = random.uniform(-10.0, 10.0)
-        msg.data = f'x: {x:.4f}, y: {y:.4f}, z: {z:.4f}'
+        if self.x >= 10.0:
+            self.direction = -1  # Change direction to negative
+        elif self.x <= -10.0:
+            self.direction = 1  # Change direction to positive
+        self.x += self.direction * 0.1  # Move the object by 0.1 units per timer tick
+        msg.data = f'x: {self.x:.4f}, y: {self.y:.4f}, z: {self.z:.4f}'
         self.publisher_.publish(msg)
-        #self.get_logger().info('Publishing: "%s"' % msg.data)
+        self.get_logger().info('Publishing: "%s"' % msg.data)
 
 
 def main(args=None):
@@ -44,4 +46,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-

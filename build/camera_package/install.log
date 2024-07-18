@@ -1,13 +1,13 @@
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/simulated_camera_node.py
+/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/local_planner.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__init__.py
-/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/camera_control.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/servo_cmd.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/publisher_member_function.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/transform.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/subscriber_member_function.py
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/simulated_camera_node.cpython-310.pyc
+/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/local_planner.cpython-310.pyc
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/__init__.cpython-310.pyc
-/home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/camera_control.cpython-310.pyc
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/servo_cmd.cpython-310.pyc
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/publisher_member_function.cpython-310.pyc
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package/__pycache__/transform.cpython-310.pyc
@@ -21,8 +21,8 @@
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info/requires.txt
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info/PKG-INFO
 /home/ubuntu/rsi_project/install/camera_package/lib/python3.10/site-packages/camera_package-0.0.0-py3.10.egg-info/top_level.txt
-/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/camera_control
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/listener
+/home/ubuntu/rsi_project/install/camera_package/lib/camera_package/local_planner
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/servo_cmd
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/simulated_camera_node
 /home/ubuntu/rsi_project/install/camera_package/lib/camera_package/subscriber_member_function
