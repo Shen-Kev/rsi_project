@@ -1,9 +1,0 @@
-[console_scripts]
-listener = camera_package.subscriber_member_function:main
-local_planner = camera_package.local_planner:main
-servo_cmd = camera_package.servo_cmd:main
-simulated_camera_node = camera_package.simulated_camera_node:main
-subscriber_member_function = camera_package.subscriber_member_function:main
-talker = camera_package.publisher_member_function:main
-transform = camera_package.transform:main
-
