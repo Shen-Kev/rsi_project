@@ -3,18 +3,30 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import Float32 
 
 class LocalPlannerNode(Node):
 
     def __init__(self):
         super().__init__('local_planner')
         self.subscription = self.create_subscription(
-            String,
-            'object_state',
+            Float32,
+            'desired_camera_angle_topic',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
+
+        self.publisher_ = self.create_publisher(Float32, 'desired_camera_angle_topic', 10)
+        timer_period = 0.0166667
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.desired_camera_angle = 123.456
+
+
+    def timer_callback(self):
+        msg = Float32()  # Change message type to Float32
+        msg.data = float(self.desired_camera_angle)  # Set the data to a float value
+        self.publisher_.publish(msg)
+        self.get_logger().info('Publishing: "%f"' % msg.data)
 
     def listener_callback(self, msg):
         self.get_logger().info('Received: "%s"' % msg.data)

@@ -11,7 +11,7 @@ class SimulatedCameraNode(Node):
 
     def __init__(self):
         super().__init__('simulated_camera_node')
-        self.publisher_ = self.create_publisher(String, 'object_state', 10)
+        self.publisher_ = self.create_publisher(String, 'object_state_topic', 10)
         timer_period = 0.0166667  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.x = -10.0  # Starting position
@@ -28,7 +28,7 @@ class SimulatedCameraNode(Node):
         self.x += self.direction * 0.1  # Move the object by 0.1 units per timer tick
         msg.data = f'x: {self.x:.4f}, y: {self.y:.4f}, z: {self.z:.4f}'
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
+        #self.get_logger().info('Publishing: "%s"' % msg.data)
 
 
 def main(args=None):
