@@ -16,14 +16,14 @@ class ServoCmdNode(Node):
         self.publisher_ = self.create_publisher(Float32, 'measured_camera_position_topic', 10)
         timer_period = 0.0166667
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.measured_camera_position = 234.567
+        self.measured_camera_position = 0.0 #NEED TO CHECK RADIANS OR DEGREES LATER
 
 
     def timer_callback(self):
         msg = Float32()  # Change message type to Float32
         msg.data = float(self.measured_camera_position)  # Set the data to a float value
         self.publisher_.publish(msg)
-        #self.get_logger().info('Publishing: "%f"' % msg.data)
+        self.get_logger().info('Publishing: "%f"' % msg.data)
 
 
     def listener_callback(self, msg):
