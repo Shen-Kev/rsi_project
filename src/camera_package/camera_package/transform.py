@@ -1,7 +1,3 @@
-#this node takes in the servo's position (either directly by assuming the servo always follows command at first, or later, using more advanced techniques if needed), and based on where the camera is rigidly mounted to the drone, describes the object's location in terms of the drone/global frame.
-
-
-
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32 
