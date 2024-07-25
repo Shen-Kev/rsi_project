@@ -27,8 +27,9 @@ class ServoCmdNode(Node):
 
 
     def listener_callback(self, msg):
+        pass
         #msg.data = msg.data + 10.0
-        self.get_logger().info('Servo Ouptut: "%f"' % msg.data)
+        #self.get_logger().info('Servo Ouptut: "%f"' % msg.data)
         
 
 def main(args=None):
