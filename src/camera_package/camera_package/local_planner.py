@@ -34,9 +34,9 @@ class LocalPlannerNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = LocalPlannerNode()
-    rclpy.spin(node)
-    node.destroy_node()
+    local_planner = LocalPlannerNode()
+    rclpy.spin(local_planner)
+    local_planner.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
