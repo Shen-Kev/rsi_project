@@ -17,7 +17,7 @@ class SimulatedCameraNode(Node):
         #test for xyz
         self.x = 1.0
         self.y = 2.0
-        self.z = 3.0
+        self.z = -3.0
         
         self.direction = 1  # Moving in the positive x direction
 
