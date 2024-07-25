@@ -16,13 +16,14 @@ class ServoCmdNode(Node):
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        self.get_logger().info('Servo Ouptut: "%s"' % msg.data)
+       #msg.data += 10
+        self.get_logger().info('Servo Ouptut: "%f"' % msg.data)
 
 def main(args=None):
     rclpy.init(args=args)
-    node = ServoCmdNode()
-    rclpy.spin_once(node)
-    node.destroy_node()
+    servo_cmd = ServoCmdNode()
+    rclpy.spin(servo_cmd)
+    servo_cmd.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
