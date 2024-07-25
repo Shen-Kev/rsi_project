@@ -29,7 +29,7 @@ class SimulatedCameraNode(Node):
         msg = Float32MultiArray()
         msg.data = [self.x, self.y, self.z]
         self.publisher_.publish(msg)
-        # self.get_logger().info('Publishing: x: %.4f, y: %.4f, z: %.4f' % (self.x, self.y, self.z))
+        #self.get_logger().info('Publishing: x: %.4f, y: %.4f, z: %.4f' % (self.x, self.y, self.z))
 
 
 def main(args=None):
