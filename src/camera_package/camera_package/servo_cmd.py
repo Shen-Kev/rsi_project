@@ -2,6 +2,8 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32 
 
+#NEED TO ADD CONVERT TO DEG FOR SERVO OUT
+
 class ServoCmdNode(Node):
     def __init__(self):
         super().__init__('servo_cmd')
@@ -16,12 +18,12 @@ class ServoCmdNode(Node):
         self.publisher_ = self.create_publisher(Float32, 'measured_camera_position_topic', 10)
         timer_period = 0.0166667
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.measured_camera_position = 0.0 #NEED TO CHECK RADIANS OR DEGREES LATER
+        self.measured_camera_position_rad = 3.14 #RADIANS
 
 
     def timer_callback(self):
         msg = Float32()  # Change message type to Float32
-        msg.data = float(self.measured_camera_position)  # Set the data to a float value
+        msg.data = float(self.measured_camera_position_rad)  # Set the data to a float value
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%f"' % msg.data)
 

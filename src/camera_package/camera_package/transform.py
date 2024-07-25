@@ -27,20 +27,20 @@ class TransformNode(Node):
         timer_period = 0.0166667
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.object_location_cam_ref_frame = None
-        self.measured_camera_position = None
+        self.measured_camera_position_rad = None
 
     def timer_callback(self):
-        if self.object_location_cam_ref_frame is not None and self.measured_camera_position is not None:
+        if self.object_location_cam_ref_frame is not None and self.measured_camera_position_rad is not None:
             # Perform the transformation
             object_location_drone_ref_frame = self.transform_to_drone_frame(
-                self.object_location_cam_ref_frame, self.measured_camera_position)
+                self.object_location_cam_ref_frame, self.measured_camera_position_rad)
 
             msg = Float32MultiArray()
             msg.data = object_location_drone_ref_frame
             self.publisher_.publish(msg)
 
     def camera_position_callback(self, msg):
-        self.measured_camera_position = msg.data
+        self.measured_camera_position_rad = msg.data
         self.get_logger().info('Received camera position: "%f"' % msg.data)
 
 
