@@ -48,7 +48,7 @@ class TransformNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    servo_cmd = ServoCmdNode()
+    servo_cmd = TransformNode()
     rclpy.spin(servo_cmd)
     servo_cmd.destroy_node()
     rclpy.shutdown()
