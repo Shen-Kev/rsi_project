@@ -14,24 +14,31 @@ class SimulatedCameraNode(Node):
         self.publisher_ = self.create_publisher(Float32MultiArray, 'object_location_cam_ref_frame_topic', 10)
         timer_period = 0.0166667  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.x = -10.0  # Starting position
-        self.y = 0.0
-        self.z = 0.0   # Fixed y and z coordinate
+        #test for xyz
+        self.x = 1.0
+        self.y = 2.0
+        self.z = 3.0
+        
         self.direction = 1  # Moving in the positive x direction
 
     def timer_callback(self):
+        
+        #test for just moving x back and forth
+        '''
         if self.x >= 10.0:
             self.direction = -1  # Change direction to negative
         elif self.x <= -10.0:
             self.direction = 1  # Change direction to positive
         self.x += self.direction * 0.1  # Move the object by 0.1 units per timer tick
+        '''
 
+
+        
         msg = Float32MultiArray()
         msg.data = [self.x, self.y, self.z]
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: x: %.4f, y: %.4f, z: %.4f' % (self.x, self.y, self.z))
-
-
+        self.get_logger().info('Object location in CAMERA frame: x: %.4f, y: %.4f, z: %.4f' % (self.x, self.y, self.z))
+        
 def main(args=None):
     rclpy.init(args=args)
 
