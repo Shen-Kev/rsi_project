@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""Node to control the gripper via GPIOs on Xavier NX."""
+import rclpy
+from rclpy.node import Node
+import RPi.GPIO as GPIO
+from std_msgs.msg import Int8
+from softdrone_core.srv import SendGraspCommand
+
+class GripperNode(Node):
+    """Node to hold gripper data."""
+
+    def __init__(self):
+        super().__init__('gripper_gpio_node')
+        """Setup Service"""
+        self._cmd_serv = self.create_service(SendGraspCommand, 'cmd_gripper', self._cmd_callback)
+        self._cmd_sub = self.create_subscription(Int8, 'cmd_gripper_sub', self._cmd_sub_callback, 10)
+
+        """GPIOs"""
+        # The commands are encoded as a 2 digit binary number AB where LOW is 0 and HIGH is 1
+        self._pin_out_a = self.declare_parameter('gpio_output_pin_a', 29).get_parameter_value().integer_value
+        self._pin_out_b = self.declare_parameter('gpio_output_pin_b', 31).get_parameter_value().integer_value
+        
+        # Command sent to gripper
+        # 0: default
+        # 1: open
+        # 2: open_asymmetric
+        # 3: close
+        self._output_signal = 0
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        GPIO.cleanup()
+        return exc_type is None
+
+    def _cmd_callback(self, req, res):
+        """Handle an open request."""
+        self._output_signal = req.cmd.cmd
+        if req.cmd.cmd < 0 or req.cmd.cmd > 3:
+            res.success = False
+        else:
+            res.success = True
+        return res
+
+    def _cmd_sub_callback(self, msg):
+        if msg.data < 0 or msg.data > 3:
+            self.get_logger().error(f'Gripper cmd must be 0 <= cmd <= 3. Got {msg.data}')
+            return
+        self._output_signal = msg.data
+
+    def spin(self):
+        GPIO.setmode(GPIO.BOARD)  # use board pin numbers
+        GPIO.setup(self._pin_out_a, GPIO.OUT)
+        GPIO.setup(self._pin_out_b, GPIO.OUT)
+
+        GPIO.output(self._pin_out_a, GPIO.LOW)
+        GPIO.output(self._pin_out_b, GPIO.LOW)
+
+        """Send signal as long as ros is ok."""
+        rate = self.create_rate(50)
+        counter = 0
+        while rclpy.ok():
+            # send signal to gpios
+            if self._output_signal == 0:
+                GPIO.output(self._pin_out_a, GPIO.LOW)
+                GPIO.output(self._pin_out_b, GPIO.LOW)
+            elif self._output_signal == 1:
+                GPIO.output(self._pin_out_a, GPIO.LOW)
+                GPIO.output(self._pin_out_b, GPIO.HIGH)
+            elif self._output_signal == 2:
+                GPIO.output(self._pin_out_a, GPIO.HIGH)
+                GPIO.output(self._pin_out_b, GPIO.LOW)
+            elif self._output_signal == 3:
+                GPIO.output(self._pin_out_a, GPIO.HIGH)
+                GPIO.output(self._pin_out_b, GPIO.HIGH)
+            else:
+                GPIO.output(self._pin_out_a, GPIO.LOW)
+                GPIO.output(self._pin_out_b, GPIO.LOW)
+                self.get_logger().error('Invalid command for gripper GPIOs! Sending default command.')
+
+            counter += 1
+            if counter > 1000:
+                counter = 0
+
+            rate.sleep()
+
+def main(args=None):
+    """Run everything."""
+    rclpy.init(args=args)
+
+    with GripperNode() as node:
+        rclpy.spin(node)
+
+    rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
